@@ -38,10 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # third party
+    'crispy_forms',
+    'crispy_bootstrap4',
+
     # local
     'post',
     'accounts',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
