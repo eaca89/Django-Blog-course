@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <section class="breadcrumbs">
+        <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>New Blog Post</h2>
+
+            <ol>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>New Blog Post</li>              
+            </ol>
+        </div>
+
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-12 netries">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <br>
+                        <input type="submit" value="Publish" class="btn btn-success">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
