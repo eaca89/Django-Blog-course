@@ -55,7 +55,7 @@
         <ul>          
           <li><a href="{% url 'home' %}">Home</a></li>          
           {% if user.is_authenticated %}
-            <li><a href="{%url 'newpost' %}">+Add new post</a></li>
+            <li><a href="{%url 'post_new' %}">+Add new post</a></li>
             <li class="dropdown"><a href="#">{{ user.username }} <span><i class="bi bi-chevron-down"></i></span></a>
               <ul>
                 <li><a href="{% url 'logout' %}">Logout</a></li>

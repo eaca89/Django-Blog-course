@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <!-- ======= Blog Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+  
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Blog</h2>
+  
+            <ol>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li>Update post</li>
+            </ol>
+          </div>
+  
+        </div>
+      </section><!-- End Blog Section -->
+  
+      <!-- ======= Blog Single Section ======= -->
+      <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row">
+  
+            <div class="col-lg-8 entries">
+  
+              <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <br>
+                <button type="submit" class="btn btn-success">Update post</button>
+              </form>
+  
+            </div><!-- End blog entries list -->            
+  
+          </div>
+  
+        </div>
+      </section><!-- End Blog Single Section -->
+
+{% endblock content %}
